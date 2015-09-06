@@ -6,12 +6,12 @@
     <meta name="description"
           value="Система обліку студентів Навчального Залкаду"  />
 
-    <!-- Include Styles -->
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-            <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid burlywood;}
+     <!-- Include Styles -->
+     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css" >
+     <!--link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css"-->
+            <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid rgba(75, 0, 255, 0);}
             </style>
-
+            <link rel="stylesheet" href="css/main.css">
 </head>
 
 
@@ -79,7 +79,7 @@ href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
           <tbody>
             <tr>
              <td>2</td>
-             <td> <img height="30" width="30" src="img/kosmos.jpg"></td>
+             <td> <img height="30" width="30" src="img/kosmos.jpg" class="img-circle" ></td>
 
              <td>Костюк</td>
              <td>Дмитро</td>
@@ -107,27 +107,23 @@ href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
           <tbody>
             <tr>
              <td>2</td>
-             <td> <img height="30" width="30" src="img/111.jpg"></td>
+             <td> <img height="30" width="30" src="img/111.jpg"  class="img-circle" ></td>
 
              <td>Василів</td>
              <td>Богдан</td>
              <td><2224</td>
              <td>
 
-                <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        Дія
-                <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Відвідування</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Редагувтаи </a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-
-                </ul>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Дія
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Редагувати</a></li>
+                    <li><a href="#">Відвідування</a></li>
+                    <li><a href="#">Видалити</a></li>
+                  </ul>
                 </div>
-
 
              <td></td>
             </tr>
@@ -136,7 +132,7 @@ href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
           <tbody>
             <tr>
              <td>3</td>
-             <td> <img height="30" width="30" src="img/images.jpg"></td>
+             <td> <img height="30" width="30" src="img/images.jpg"  class="img-circle" ></td>
 
              <td>Петрів</td>
              <td>Петро</td>
@@ -171,7 +167,7 @@ href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
              &laquo;  </a></li>
              <li><a href="#">1</a></li>
              <li><a href="#">2</a></li>
-             <li><a href="#">3</a></li>\
+             <li class="active"> <a href="#">3</a></li>\
                 <li><a href="#">4</a></li>
                 <li><a href="#">5</a></li><li>
               <a href="#" aria-label="Next">
@@ -180,7 +176,7 @@ href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
                </li>
             </ul>
         </nav>
-        <!----End Students Listing>
+        <!--End Students Listing-->
         <!--Start Footer-->
         <div class="row" id="footer">
             <div class="col-xs-12">
@@ -196,10 +192,8 @@ href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
 
 
 <!-- Javascripts Section -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/\
-jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstr\
-ap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>
