@@ -30,3 +30,12 @@ h1,h2,h3,h5,h5,h6 {
   line-height: 30px;
   color: #555555;
 }
+#bigtextfield{
+
+    height: 75px;
+}
+
+#content-col{
+    padding-left: 100px;
+    padding-top: 24px;
+}
