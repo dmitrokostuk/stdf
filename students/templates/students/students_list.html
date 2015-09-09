@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk ">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сервіс обілку студентів</title>
+    <meta name="description"
+          value="Система обліку студентів Навчального Залкаду"  />
+
+     <!-- Include Styles -->
+     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css" >
+     <!--link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css"-->
+            <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid rgba(75, 0, 255, 0);}
+            </style>
+            <link rel="stylesheet" href="../../../studdb/static/css/main.css">
+</head>
+
+
+<body>
+    <!--Start container-->
+    <div class="container">
+
+        <!-- Start Header -->
+       <div class="row" id="header">
+       <!-- Logo -->
+           <div class="col-xs-8">
+              <h1>Сервіс обіліку студентів </h1>
+           </div>
+           <!-- Groups Selector -->
+           <div class="col-xs-4" id="group-selector">
+               <strong> Група</strong>
+               <select>
+
+                   <option value=" "> Усі студенти </option>>
+                   <option value=" "> Феі - 51, Вавсилів Богдан </option>>
+                   <option value=" "> Феі - 51, Сенів Михайло  </option>>
+               </select>
+           </div>
+       </div>
+<!-- End Header -->
+
+        <!--Start SubHeader-->
+        <div class="row" id="sub-header">
+            <div class="col-xs-12">
+            <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="{% url 'home' %}">Студенти</a></li>
+            <li role="presentation"><a href="/journal">Відвідування </a></li>
+            <li role="presentation"> <a href="{% url 'groups' %}">Групи</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <!--End SubHeader-->
+
+        <!--Start Main Page content-->
+        <div class="row" id=content-columns"">
+            <div class="col-xs-12 " id="content-column" >
+                <!--Status Message-->
+                <div class="alert alert-warning" role="alert">Зміни скасовано </div>
+
+                <h2> База студентів</h2>
+                <!--Add Student Button-->
+                <a href="/students/add" class="btn btn-primary" > Додати студента </a>
+                <div>Тут буде список студентів</div>
+            </div>
+        </div>
+        <!--End Main Page Content-->
+        <!--Start Students Listing-->
+        <table class="table table-hover table-striped ">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Фото</th>
+              <th>Првізвище</th>
+              <th>Імя</th>
+              <th>№ білету</th>
+              <th>Дії</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+             <td>2</td>
+             <td> <img height="30" width="30" src="./img/kosmos.jpg" class="img-circle" ></td>
+
+             <td> <a href="{% url 'students_edit' 1 %}" > Костюк </a></td>
+             <td><a href="{% url 'students_edit' 1 %}"> Дмитро</a></td>
+             <td><1224</td>
+             <td>
+
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        Дія
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/journal">Відвідування</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_edit' 1 %}" >Редагувтаи </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_delete' 1 %}">Delete</a></li>
+
+                </ul>
+                </div>
+
+
+             <td></td>
+            <tr>
+             <td>2</td>
+             <td> <img height="30" width="30" src="./img/111.jpg"  class="img-circle" ></td>
+                <td> <a href="{% url 'students_edit' 2 %}" > Василів </a></td>
+             <td><a href="{% url 'students_edit' 2 %}"> Василь</a></td>
+             <td><2224</td>
+             <td>
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Дія
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/journal">Відвідування</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_edit' 2 %}" >Редагувтаи </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_delete' 2 %}">Delete</a></li>
+
+                  </ul>
+                </div>
+
+             <td></td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+             <td>3</td>
+             <td> <img height="30" width="30" src="./img/images.jpg"  class="img-circle" ></td>
+
+                 <td> <a href="{% url 'students_edit' 2 %}" > Петрів  </a></td>
+             <td><a href="{% url 'students_edit' 2 %}">  Петро </a></td>
+             <td><224</td>
+             <td>
+
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        Дія
+                <span class="caret"></span>
+                </button>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/journal">Відвідування</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_edit' 3 %}" >Редагувтаи </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_delete' 3 %}">Delete</a></li>
+                </ul>
+                </div>
+
+
+             <td></td>
+            </tr>
+          </tbody>
+
+
+        </table>
+        <nav>
+            <ul class="pagination">
+             <li> <a href="#" aria-label="Previous">
+             <span aria-hidden="true">&laquo;</span>
+             &laquo;  </a></li>
+             <li><a href="#">1</a></li>
+             <li><a href="#">2</a></li>
+             <li class="active"> <a href="#">3</a></li>\
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li><li>
+              <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+                   </a>
+               </li>
+            </ul>
+        </nav>
+        <!--End Students Listing-->
+        <!--Start Footer-->
+        <div class="row" id="footer">
+            <div class="col-xs-12">
+            &copy; 2014 Сервіс обілку студентів
+            </div>
+         </div>
+         <!--End Footer-->
+
+    </div>
+
+    <!--End container-->
+
+
+
+<!-- Javascripts Section -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
