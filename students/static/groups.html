@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-{% load staticfiles %}
-<html lang="uk ">
-<link>
+<html lang="en">
+<head>
     <meta charset="UTF-8"/>
     <title>Сервіс обілку студентів</title>
     <meta name="description"
@@ -12,11 +11,8 @@
      <!--link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css"-->
             <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid rgba(75, 0, 255, 0);}
             </style>
-      <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-
-
+            <link rel="stylesheet" href="css/main.css">
 </head>
-
 
 <body>
     <!--Start container-->
@@ -45,9 +41,9 @@
         <div class="row" id="sub-header">
             <div class="col-xs-12">
             <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="{% url 'home' %}">Студенти</a></li>
-            <li role="presentation"><a href="/journal">Відвідування </a></li>
-            <li role="presentation"> <a href="{% url 'groups' %}">Групи</a></li>
+            <li role="presentation"><a href="#">Студенти</a></li>
+            <li role="presentation"><a href="#">Відвідування </a></li>
+            <li role="presentation"  class="active"><a href="#">Групи</a></li>
             </ul>
             </div>
         </div>
@@ -58,12 +54,12 @@
         <div class="row" id=content-columns"">
             <div class="col-xs-12 " id="content-column" >
                 <!--Status Message-->
-                <div class="alert alert-warning" role="alert">Зміни скасовано </div>
+                <div class="alert alert-warning" role="alert">Групу додано  </div>
 
-                <h2> База студентів</h2>
+                <h2> Групи </h2>
                 <!--Add Student Button-->
-                <a href="/students/add" class="btn btn-primary" > Додати студента </a>
-                <div>Тут буде список студентів</div>
+                <a class="btn btn-primary" href="#"> Додати групу </a>
+                <!--div>Тут буде список студентів</div-->
             </div>
         </div>
         <!--End Main Page Content-->
@@ -72,38 +68,70 @@
           <thead>
             <tr>
               <th>№</th>
-              <th>Фото</th>
-              <th>Првізвище</th>
-              <th>Імя</th>
-              <th>№ білету</th>
+              <th>Назва </th>
+              <th>Староста</th>
               <th>Дії</th>
             </tr>
           </thead>
-          <tbody>
-          {% for student in students %}
-            <tr>
-             <td>{{ forloop.counter }}</td>
-             <td> <img class="img-circle" src="{% static student.image %} " height="30"
-                     width="39">  </td>
-
-             <td> <a href="{% url 'students_edit' student.id %}"> {{student.last_name}} </a></td>
-             <td><a href="{% url 'students_edit' student.id %}"> {{student.first_name}}</a></td>
-             <td>{{student.ticket}}</td>
+           <thead>
+             <td>1</td>
+             <td>ФзП-21</td>
+             <td>Остапів Остап</td>
              <td>
-                <div class="dropdown">
+                 <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="true">
                         Дія
                 <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/journal/{{student.id}}">Відвідування</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_edit' student.id %} " >Редагувтаи </a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'students_delete' student.id %}">Delete</a></li>
-
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Відвідування</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Редагувтаи </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
                 </ul>
                 </div>
-          {% endfor %}
+              <thead>
+              </thead>
+             <thead>
+             <td>1</td>
+             <td>ФзП-21</td>
+             <td>Остапів Остап</td>
+             <td>
+                 <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        Дія
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Відвідування</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Редагувтаи </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                </ul>
+                </div>
+              <thead>
+              </thead>
+             <thead>
+             <td>1</td>
+             <td>ФзП-11к</td>
+             <td>Іванов Іван</td>
+             <td>
+                 <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        Дія
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Відвідування</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Редагувтаи </a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                </ul>
+                </div>
+            <tr>
+             </thead>
+
+
 
         </table>
         <nav>
