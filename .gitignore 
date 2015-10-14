@@ -3,4 +3,6 @@
 *.egg-info
 *.mo
 *.egg
-media
+students/static/img/media
+students/static/bootstrap
+db.py
