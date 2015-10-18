@@ -1,0 +1,42 @@
+{% extends 'students/base.html' %}
+
+{% block meta_title %}
+Студенти
+{% endblock meta_title %}
+{% block title %}
+It's page when I learn JavaScript
+{% endblock title %}
+{% block content %}
+        <!--Start Students Listing-->
+        <table class="table table-hover table-striped ">
+               <thead>
+            <tr>
+              <th>№</th>
+              <th>Назва </th>
+              <th>Староста</th>
+              <th>Дії</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for group in groups %}
+            <tr>
+             <td>{{ forloop.counter }}</td>
+
+             <td>
+             <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        Дія
+                <span class="caret"></span>
+                </button>
+
+
+
+             </div>
+        {% endfor %}
+
+        </table>
+{% include 'students/pagination.html' %}
+{% endblock content %}
+<!-- End Header -->
+
