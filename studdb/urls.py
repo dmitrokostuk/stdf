@@ -44,7 +44,21 @@ urlpatterns = patterns('',
     #Journal urls
     url(r'^journal/$', 'students.views.journal.journal', name='journal'),
 
+    #JExams urls
+    url(r'^exams/$', 'students.views.exams.exams', name='exams'),
+    url(r'^exams/add/$', 'students.views.exams.exams_add',
+         name='exams_add'),
+    url(r'^exams/(?P<gid>\d+)/edit/$', 'students.views.exams.exams_edit',
+         name='exams_edit'),
+    url(r'^exams/(?P<gid>\d+)/delete/$', 'students.views.exams.exams_delete',
+         name='exams_delete'),
+     #Teacher urls
+    url(r'^teacher/$', 'students.views.teacher.teacher', name='teacher'),
+
+
     url(r'^admin/', include(admin.site.urls)),
+
+
 
 )
 

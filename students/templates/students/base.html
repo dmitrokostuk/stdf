@@ -45,6 +45,11 @@
             <a href='/journal'>Відвідування</a></li>
             <li role="presentation" {% if '/groups' in request.path %}class="active"{% endif %}>
             <a href="{% url "groups" %}">Групи</a></li>
+            <li role="presentation" {% if '/exams' in request.path %}class="active"{% endif %}>
+            <a href="{% url "exams" %}">Екзамени</a></li>
+            <li role="presentation" {% if '/teacher' in request.path %}class="active"{% endif %}>
+            <a href="{% url "teacher" %}">Викладачі </a></li>
+
         </ul>
       </div>
     </div>

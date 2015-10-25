@@ -6,3 +6,5 @@
 students/static/img/media
 students/static/bootstrap
 db.py
+students/templates/teacher.html
+students/views/teacher.py
