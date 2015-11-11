@@ -23,7 +23,7 @@ class Tests(models.Model):
 
     )
 
-    teacher= models.CharField(
+    teacher = models.CharField(
         verbose_name=u"Викладач",
         max_length=256,
         blank=False,
@@ -49,4 +49,4 @@ class Tests(models.Model):
     )
 
     def __unicode__(self):
-        return u"%s %s %s %s %s" %(self.exam_title,self.teacher,self.examtime,self.notes,self.clasroom)
+        return u"%s %s %s %s %s %s" %(self.groupexams,self.exam_title,self.teacher,self.examtime,self.clasroom,self.notes)

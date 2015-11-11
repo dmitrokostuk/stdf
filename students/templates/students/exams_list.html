@@ -63,11 +63,10 @@
             <tr>
              <td>{{ forloop.counter }}</td>
               <td> <a href="{% url 'exams_edit' exams.id %}"> {{exam.groupexams}} </a></td>
-
-             <td><a href="{% url 'exams_edit' exams.id %}"> {{exam.exam_title}}</a></td>
+             <td> <a href="{% url 'exams_edit' exams.id %}"> {{exam.exam_title}}</a></td>
              <td> <a href="{% url 'exams_edit' exams.id %}"> {{exam.teacher}} </a></td>
-             <td><a href="{% url 'exams_edit' exams.id %}"> {{exam.clasroom}}</a></td>
-             <td><a href="{% url 'exams_edit' exams.id %}"> {{exam.examtime}}</a></td>
+             <td> <a href="{% url 'exams_edit' exams.id %}"> {{exam.clasroom}}</a></td>
+             <td> <a href="{% url 'exams_edit' exams.id %}"> {{exam.examtime}}</a></td>
 
              <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
