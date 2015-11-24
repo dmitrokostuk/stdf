@@ -50,11 +50,16 @@ def students_add(request):
             if not last_name:
                 errors['last_name'] = u"Прізвище є обовязковим "
             else:
-                data['lasts_name'] = last_name
+                try:
+                    datetime.strptime(birthday,'%-Y%m_%d')
+                except Exception:
+                    errors['birthday'] = u"Введ конкретний формат дати(напр 1984-12-30)"
+                else:
+                    data['lasts_name'] = last_name
 
             birthday = request.POST.get('birthday','').strip()
             if not birthday:
-                errors['birthday'] = u"Прізвище є обовязковим "
+                errors['birthday'] = u"дата народження є обовязковою "
             else:
                 data['birthday'] = birthday
 
@@ -65,10 +70,15 @@ def students_add(request):
                 data['ticket'] = ticket
 
             student_group = request.POST.get('student_group','').strip()
-            if not last_name:
-                errors['student_group'] = u"Прізвище є обовязковим "
+            if not student_group:
+                errors['student_group'] = u"Оберіть групу для студента"
+
             else:
                 data['student_group'] = Group.objects.get(pk=student_group)
+                if len(groups) !=1:
+                    errors['student_group'] = u"Оберіть конкретну групу"
+                else:
+                    data['student_group']= groups[0]
 
             photo = request.FILES.get('photo')
             if photo:
@@ -85,7 +95,8 @@ def students_add(request):
            student.save()
 
            # redirect to  students list
-           return HttpResponseRedirect(reverse('home'))
+           return HttpResponseRedirect(u'%s?status_message=Додавання студента успішне !!!'%
+                                       reverse('home'))
 
         else:
             #render form width errors and previos user input
@@ -95,7 +106,8 @@ def students_add(request):
 
     elif request.POST.get('cancel_button') is not None:
         # redirect to home page on cancel button
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(u'%s?status_message=Додавання студента скасоване е !!!'%
+                reverse('home'))
     else:
         return render(request,'students/students_add.html',{'groups': Group.objects.all().order_by('title')})
 
