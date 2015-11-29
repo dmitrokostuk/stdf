@@ -9,7 +9,8 @@
 
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet"
+
+   <link rel="stylesheet" href="{{PORTAL_URL}}{% static "css/main.css" %}">
 
   {% block extra_css %}{% endblock extra_css %}
 
@@ -61,7 +62,7 @@
       <div class="col-xs-12" id="content-column">
          {%block status_message%}
          {% if request.GET.status_message%}
-         <div class="alert alert-warning" role="alert">{{%  request.GET.status_message%}}</div>
+         <div class="alert alert-warning" role="alert"></div>
          {% endif %}
          {% endblock %}
        <h2>{% block title %}{% endblock title %}</h2>

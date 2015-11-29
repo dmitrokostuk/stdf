@@ -39,3 +39,9 @@ h1,h2,h3,h5,h5,h6 {
     padding-left: 100px;
     padding-top: 24px;
 }
+/*Form Styles*/
+textarea
+select
+input{
+    max-width: 300px;
+}
