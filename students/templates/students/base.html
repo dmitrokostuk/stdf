@@ -50,7 +50,8 @@
             <a href="{% url "exams" %}">Екзамени</a></li>
             <li role="presentation" {% if '/teacher' in request.path %}class="active"{% endif %}>
             <a href="{% url "teacher" %}">Викладачі </a></li>
-
+            <li role="presentation" {% if '/contact-admin' in request.path %}class="active"{% endif %}>
+            <a href="{% url "contact_admin" %}">Контакт </a></li>
         </ul>
       </div>
     </div>

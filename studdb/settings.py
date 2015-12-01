@@ -39,8 +39,15 @@ SECRET_KEY = '(8j&4m!7fs601xxg5j92t^w46fzzp36tu1zko37x7b982ir3*j'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
+# email settings
+# please,set here your stmp server datails and your admon email
+ADMIN_EMAIL = 'admin@studdb.com'
+EMAIL_HOST = 'smtp.server.com'
+EMAIL__PORT = '587'
+EMAIL_HOST_USER = 'username1'
+EMAIL_HOST_PASSWORD = '111222'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSH = False
 # Application definition
 
 INSTALLED_APPS = (
