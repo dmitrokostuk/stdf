@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 {% extends 'students/base.html' %}
-
-
 {% load static  %}
-
+{% load crispy_forms_tags %}
 
 {% block meta_title %}
 Звязок з Адміністратором
 {% endblock meta_title %}
+{% block status_message %}
+{% if form.errors%}
+   <div class="alert alert-warning" role="alert">Виправте помилки і надішліть форму повторно</div>
+{% endif %}
+{{block.super}}
+
+{% endblock status_message %}
 
 
 {% block title %}
@@ -15,6 +20,7 @@
 {% endblock title %}
 
 {% block content %}
-Form to contacts
+
+{% crispy form %}
 {% endblock content%}
 </html>
